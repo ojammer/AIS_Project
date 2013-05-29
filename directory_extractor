@@ -39,7 +39,7 @@ if os.path.isdir(directory):
 if True:
 
     def walk_dir(root_dir, extension):
-##    Walks the specified directory root and all its subdirectories and returns a list containing all files with extension ext
+#    Walks the specified directory root and all its subdirectories and returns a list containing all files with extension ext
 
         file_list = []
         towalk = [directory]
