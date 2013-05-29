@@ -1,0 +1,72 @@
+#!/usr/bin/env python
+import os,sys
+# example walking a directory/folder
+# create a list of all files with a given extension in
+# a given the directory and all its subdirectories (full path name)
+dirwfile = [] 
+class User:  # We can't use input as it is a existent function name, so we use AInput for Advance Input
+   ''' This class will create a object with a simpler coding interface to retrieve console input'''
+   def __init__(self, msg=""):
+      ''' This will create a instance of ainput object'''
+      self.data = ""  # Initialize a empty data variable
+      if not msg == "":
+         self.ask(msg)
+ 
+   def ask(self, msg, req=0):
+      ''' This will display the prompt and retrieve the user input.'''
+      if req == 0:
+         self.data = input(msg)  # Save the user input to a local object variable
+      else:
+         self.data = input(msg + " (Require)")
+ 
+      # Verify that the information was entered and its not empty. This will accept a space character. Better Validation needed
+      if req == 1 and self.data == "":
+         self.ask(msg, req)
+ 
+   def getString(self):
+      ''' Returns the user input as String'''
+      return self.data
+# User input is necessary to perfom the search for files  
+directory = User("Please input to location of files to be completed: ").getString()
+print "The entered directory is?" " "+(directory+ "\n")   
+fileextension = User ("Please provide file extension for files:" +"\n" ).getString()
+print "The entered file extension for the search files are ?" + "\n" + (fileextension)
+if os.path.isdir(directory):
+   if True:
+        print True, "The directory does exist"
+   else:
+        print False 
+if True:
+
+    def walk_dir(root_dir, extension):
+##    Walks the specified directory root and all its subdirectories and returns a list containing all files with extension ext
+
+        file_list = []
+        towalk = [directory]
+        while towalk:
+            root_dir = towalk.pop()
+            for path in os.listdir(root_dir):
+                path = os.path.join(root_dir, path).lower()
+                if os.path.isfile(path) and path.endswith(extension):
+                    file_list.append(path)
+                elif os.path.isdir(path):
+                    towalk.append(path)
+        return file_list   
+         
+    # Test the function
+if __name__ == '__main__':
+    # Use the root directory of your choice
+    root_dir = directory
+    extension = fileextension 
+    file_list = walk_dir(root_dir, extension)
+     
+    file_list.sort()
+     
+    print "-"*150
+    print "All files ending with %s in directory %s and its subdirectories:" "\n" %(extension, root_dir)
+     
+
+    for filename in file_list:
+        if len(filename) <= 100:#Character length of the file directory
+            dirwfile.append(filename)
+    print dirwfile
