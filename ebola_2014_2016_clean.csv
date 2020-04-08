@@ -1,4 +1,4 @@
-Country,Date,No._of_suspected_cases,No._of_probable_cases,No._of_confirmed_cases,"No._of_confirmed,_probable_and_suspected_cases",No._of_suspected_deaths,No._of_probable_deaths,No._of_confirmed_deaths,"No._of_confirmed,_probable_and_suspected_deaths"
+Country,Date,No._of_suspected_cases,No._of_probable_cases,No._of_confirmed_cases,"No._of_confirmed,_probable_and_suspected_cases",No._of_suspected_deaths,No._of_probable_deaths,Confirmed_Deaths,"No._of_confirmed,_probable_and_suspected_deaths"
 Guinea,8/29/2014,25,141,482,648,2,141,287,430
 Guinea,9/5/2014,56,152,604,812,3,152,362,517
 Guinea,9/8/2014,47,151,664,862,4,151,400,555
